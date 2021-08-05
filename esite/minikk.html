@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- bootstrap. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!-- fontawesome. -->
+    <script src="https://kit.fontawesome.com/ab026326c7.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <title>MiniKlub</title>
+  </head>
+  <body>
+<div  ng-app="myApp" ng-controller="myCtrl">
+<!--Navbar-->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><i id="icon"class="fab fa-adn"></i></a>
+  <div class="nav">
+
+    <li class="nav-item">
+      <a class="nav-link" href="MEN.html">MEN</a>
+    </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="WOMEN.html">WOMEN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="KIDS.html">KIDS</a>
+      </li>
+
+
+      <!-- links -->
+      <div class="link">
+
+      <div class="picon">
+      <i  id="picon" class="far fa-user"></i><br>
+      <a style="color:black; font-weight:bold;" href="login.html">Profile</a>
+     </div>
+     <div class="wlink">
+     <i  id="wlink"class="far fa-heart"></i><br>
+     <a style="color:black; font-weight:bold;" href="Wishlist.html">Wishlist</a>
+    </div>
+   <div class="Bicon">
+  <i  id="Bicon"class="fas fa-shopping-bag" ></i><br>
+   <a  style="color:black; font-weight:bold;"href="ADC.html">{{noofelement}}</a>
+ </div>
+</nav>
+
+
+<div class="smalltab">
+  <h5>Home/KID's Fastion Store</h5>
+  <h6>KID's Fastion Store- items </h6>
+</div>
+
+<!-- array vivepart -->
+<div class=" row mx-0  px-5">
+<div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="x in pro">
+<div class="cardbody">
+<img  class="img"  ng-src={{x.srcc}}> </img>
+<div class="card-title">{{x.Brand}}</div>
+<div class="card-text">{{x.about}}</div>
+<div class="card-text">{{x.price}}</div>
+<div class="cardbtn">
+<button id="wishbtn" class="btn btn-outline-info" ng-click="wish(x.id)"><i class="fas fa-heart"></i></button>
+<button id="cartbtn" type="button" name="button" class="btn btn-outline-info" ng-click="addtocart(x.id)"><i class="fas fa-cart-plus"></i></button>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope){
+    $scope.cart = [];
+    $scope.wishl =[];
+  $scope.pro =[{ 'Brand':'MiniKlub', 'price': 'RS1799' , 'about':'Solid Padded jacket', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/8/31/75684f60-f3d0-4de3-a644-564ebe645abe1567274174751-1.jpg','quantity':0,'id':24},
+  { 'Brand':'MiniKlub', 'price': 'RS1098' , 'about':'Foral Frock', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/6/27/528bc645-031d-4445-b465-95ccb1128eaf1624788867951-1.jpg','quantity':0,'id':25},
+  { 'Brand':'MiniKlub', 'price': 'RS399' , 'about':'girl set of two bib', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/8/4/3bb44952-2781-4be3-bcfa-6d6884344f001596491648862-1.jpg','quantity':0,'id':26},
+  { 'Brand':'MiniKlub', 'price': 'RS824' , 'about':'Boy blue And white Dunggrey', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/6/26/05542cda-560f-4989-aa90-f39560a952001624722988861-1.jpg','quantity':0,'id':27},
+  { 'Brand':'MiniKlub', 'price': 'RS424' , 'about':'boy stripted sleep shuit', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/11/13/ebd1dfe1-32b9-4de5-b349-9466f10c9a781605238029844-1.jpg','quantity':0,'id':28},
+  {'Brand':'MiniKlub', 'price': 'RS424' , 'about':'red carton ', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/8/5/d65f0319-7aa6-43df-8bd3-095a978427341596577462151-1.jpg','quantity':0,'id':29}
+];
+
+
+
+
+$scope.addtocart = function($index)
+			{
+
+				if(JSON.parse(localStorage.getItem('cart')) == null){
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						$scope.pro[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+
+					}
+				}
+				else{
+
+					$scope.cart = JSON.parse(localStorage.getItem('cart'))
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						// $scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+					}
+				}
+
+			}
+      $scope.wish = function($index){
+
+				if(JSON.parse(localStorage.getItem('wish')) == null)
+				{
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Item Wishlisted")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+
+				else
+				{
+					$scope.wishl = JSON.parse(localStorage.getItem('wish'))
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Item Wishlisted")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+			}
+});
+
+</script>
+</body>
+</html>

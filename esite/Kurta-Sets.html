@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- bootstrap. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!-- fontawesome. -->
+    <script src="https://kit.fontawesome.com/ab026326c7.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <title>Kurtas</title>
+  </head>
+  <body>
+<div  ng-app="myApp" ng-controller="myCtrl">
+<!--Navbar-->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><i id="icon"class="fab fa-adn"></i></a>
+  <div class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="HOME.html">HOME</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="MEN.html">MEN</a>
+    </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="WOMEN.html">WOMEN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="KIDS.html">KIDS</a>
+      </li>
+
+
+      <!-- links -->
+      <div class="link">
+
+      <div class="picon">
+      <i  id="picon" class="far fa-user"></i><br>
+      <a  href="profile.html">Profile</a>
+     </div>
+     <div class="wlink">
+     <i  id="wlink"class="far fa-heart"></i><br>
+     <a  href="wishlist.html">Wishlist</a>
+    </div>
+   <div class="Bicon">
+  <i  id="Bicon"class="fas fa-shopping-bag"></i><br>
+   <a  href="#">{{noofelement}}</a>
+ </div>
+</nav>
+
+
+<div class="smalltab">
+  <h5>Home/Women's Fastion Store</h5>
+  <h6>Women's Fastion Store- items </h6>
+</div>
+
+<!-- array vivepart -->
+<div class=" row mx-0  px-5">
+
+<div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="p in productlist">
+  <div class="cardbody">
+<img  class="img"  ng-src={{p.srcc}}> </img>
+<div class="card-title">{{p.Brand}}</div>
+<div class="card-text">{{p.about}}</div>
+<div class="card-text">{{p.price}}</div>
+<div class="cardbtn">
+<button id="wishbtn" class="btn btn-outline-info" ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+<button id="cartbtn" type="button" name="button" class="btn btn-outline-info" ng-click="addtocart(p.id)" ><i class="fas fa-cart-plus"></i></button>
+</div>
+
+</div>
+</div>
+
+</div>
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope){
+    $scope.cart=[];
+    $scope.wishl=[];
+  $scope.productlist=[{ 'Brand':'BiBa', 'price': 'RS959' , 'about':'women solid kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/9371115/2019/5/14/7e1dcf08-9816-4812-bd83-560851a73e531557836005052-Sangria-Women-Kurtas-8081557836002536-1.jpg','quantity':0,'id':102},
+  { 'Brand':'Varanga', 'price': 'RS1209' , 'about':'Pink--White-Leheriya-Printed-Angrakha-Kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13647622/2021/3/4/1fa584db-2f9e-4a0f-8ee3-f649a92eb3de1614860439664-Varanga-Women-Pink--White-Leheriya-Printed-Angrakha-Kurta-Wi-1.jpg','quantity':0,'id':103},
+  { 'Brand':'Kvsfab', 'price': 'RS1290' , 'about':'Embedary solid green kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13619504/2021/2/24/2b2c164a-4b1e-45d9-83a3-ca3dfbd11da91614166542937-Kvsfab-Teal-Green-color-Embroidery-with-Sequins-Work-Party-W-1.jpg','quantity':0,'id':104},
+  { 'Brand':'Anouk', 'price': 'RS790' , 'about':'Floral-Printed-Kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13238056/2021/3/3/96a567c0-c3a4-4e2b-96c6-20e2554692f81614767629741-Anouk-Beige-Floral-Printed-Kurta-4031614767627829-1.jpg','quantity':0,'id':105},
+  { 'Brand':'YASH-Gallary', 'price': 'RS1079' , 'about':'red and offwhite anarkali kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11007986/2019/12/6/38a9ba9e-92ab-4e19-81d1-6e9884a996071575634892337-Womens-Cotton-Bandhej-Print-Anarkali-Kurta-Red-9401575634889-1.jpg','quantity':0,'id':106},
+  { 'Brand':'Libas', 'price': 'Rs890' , 'about':'Black simple kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12395988/2020/9/2/786bafb0-e4b1-49da-86e8-3b104c0ca7a61599054033451Libas1.jpg','quantity':0,'id':107}
+
+];
+
+$scope.addtocart = function($index)
+			{
+
+				if(JSON.parse(localStorage.getItem('cart')) == null){
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						$scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+
+					}
+				}
+				else{
+
+					$scope.cart = JSON.parse(localStorage.getItem('cart'))
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						// $scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+					}
+				}
+
+			}
+      $scope.wish = function($index){
+
+				if(JSON.parse(localStorage.getItem('wish')) == null)
+				{
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Item Wishlisted")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+
+				else
+				{
+					$scope.wishl = JSON.parse(localStorage.getItem('wish'))
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("allredy in your wishlist")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+			}
+
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- bootstrap. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!-- fontawesome. -->
+    <script src="https://kit.fontawesome.com/ab026326c7.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <title>ADDTOBAG</title>
+  </head>
+  <style>
+  body {
+    background-color: #FDF6F0;
+  }
+  th{ background-color: #CDBBA7;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+  }
+  table{
+    margin-left: 200px;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid #CDBBA7;
+  }
+  </style>
+  <body>
+    <div ng-app="myapp" ng-controller="mycnt">
+    <!--Navbar-->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"><i id="icon"class="fab fa-adn"></i></a>
+      <div class="nav">
+
+
+      <li class="nav-item">
+      <a class="nav-link" href="first.html">HOME</a>
+      </li>
+
+          <li class="nav-item">
+          <a class="nav-link" href="MEN.html">MEN</a>
+        </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="WOMEN.html">WOMEN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="KIDS.html">KIDS</a>
+          </li>
+
+
+          <!-- links -->
+          <div class="link" style="display:flex;">
+         <div class="picon">
+          <i  id="picon" class="far fa-user"></i><br>
+          <a style="color:black; font-weight:bold;" href="login.html">PROFILE</a>
+         </div>
+         <div class="wlink">
+         <i  id="wlink"class="far fa-heart"></i><br>
+         <a style="color:black; font-weight:bold;" href="wishlist.html">WISHLIST</a>
+        </div>
+     </div>
+    </nav>
+
+<table border="1">
+  <tr>
+    <th>Product image</th>
+    <th> product name</th>
+    <th> Brand</th>
+    <th> Quantity</th>
+    <!-- <th> product price</th> -->
+    <th> Total price</th>
+    <th> Remove-Product</th>
+</tr>
+<tr ng-repeat="x in data">
+ <td><img src={{x.srcc}} style="width:100px; height:100px;"></td>
+  <td>{{x.about}}</td>
+  <td>{{x.Brand}}</td>
+  <td><input type="number" ng-model="x.quantity" min="0"></td>
+   <!-- <td>{{x.price | currency: '₹'}}</td> -->
+  <td>{{x.price * x.quantity | currency: '₹'}}</td>
+  <td><button  class="btn btn-dark" type="button" ng-click="removep($index)">Remove</button></td>
+
+  </tr>
+  <tr>
+    <td>Total Price</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <!-- <td></td> -->
+    <td>{{tpp() | currency: '₹'}} </td>
+  </tr>
+  <tr>
+    <td>Apply coupon</td>
+    <td><input type="text" ng-model="couponn"></td>
+    <td><button class="btn btn-dark" ng-click="cou()">Apply</button></td>
+    <td>{{finalprice}}</td>
+    <td></td>
+    <td><button class="btn btn-dark" ng-click="openpage()">Check-Out</button></td>
+  </tr>
+
+  </table>
+
+</div>
+  </div>
+  <script>
+
+    var app= angular.module("myapp",[]);
+    app.controller('mycnt', function($scope){
+      $scope.data=[];
+      $scope.ct= JSON.parse(localStorage.getItem('cart'));
+    $scope.xx = JSON.parse(localStorage.getItem('finalproduct'));
+
+     var lg = $scope.ct.length;
+    for(var i = 0; i< lg; i++ )
+    {
+      var ctt = $scope.xx.findIndex(function (pl){
+         return pl.id== $scope.ct[i];
+
+      })
+      $scope.data.push($scope.xx[ctt]);
+    }
+
+
+console.log($scope.data);
+
+$scope.tpp= function(){
+  $scope.datatp=0;
+  for(var i in $scope.data){
+    $scope.datatp += $scope.data[i].price*$scope.data[i].quantity
+  }
+  return $scope.datatp;
+}
+
+
+  $scope.finalprice=0;
+$scope.couponcodes = [
+                { 'coupon' : "APPLY10", 'msg': '10% Discount Applied', 'per': 10},
+                { 'coupon' : "APPLY25", 'msg': '25% Discount Applied', 'per': 25},
+                { 'coupon' : "FLAT90%", 'msg': '90% Discount Applied', 'per': 90}
+                ]
+$scope.cou = function()
+    {
+                console.log($scope.couponcodes.findIndex(couponcodes => couponcodes.coupon == $scope.couponnn));
+                $scope.len = $scope.couponcodes.findIndex(couponcodes => couponcodes.coupon == $scope.couponn);
+                if($scope.couponcodes.findIndex(couponcodes => couponcodes.coupon === $scope.couponn)!= -1)
+                {
+                    $scope.applied = true
+                    $scope.notapplied = false
+                    $scope.mg = $scope.couponcodes[$scope.len]
+                    $scope.msgg = $scope.mg.msg
+                    console.log($scope.msgg)
+                    var per = (($scope.mg.per)/100)
+
+                    $scope.finalprice = $scope.datatp - ($scope.datatp * per)
+                    console.log($scope.finalprice)
+                    localStorage.setItem('fvalue',$scope.finalprice);
+                }
+                else
+                {
+                    $scope.applied = false
+                    $scope.notapplied = true
+                }
+        }
+
+$scope.removep = function($index){
+
+ $scope.newin = $scope.ct.indexOf($index);
+ $scope.data.splice($index, 1);
+  $scope.ct.splice($index, 1);
+
+
+  localStorage.setItem('cart',JSON.stringify($scope.ct));
+
+}
+
+$scope.openpage = function(){
+location.href="checkout.html";
+}
+
+    });
+    </script>
+  </body>
+</html>

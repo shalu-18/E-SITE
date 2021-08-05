@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- bootstrap. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!-- fontawesome. -->
+    <script src="https://kit.fontawesome.com/ab026326c7.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <title>product page</title>
+  </head>
+  <style>
+     .box{
+      display:flex;
+    }
+
+  </style>
+<body>
+
+<div  ng-app="myapp" ng-controller="mycnt">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><i id="icon"class="fab fa-adn"></i></a>
+  <div class="nav">
+
+    <li class="nav-item">
+      <a class="nav-link" href="MEN.html">MEN</a>
+    </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="WOMEN.html">WOMEN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="KIDS.html">KIDS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="ADC.html">ADTOCART</a>
+      </li>
+
+
+      <!-- links -->
+      <div class="linkk" style="display:flex; margin-left:650px;">
+
+      <div class="picon">
+      <i  id="picon" class="far fa-user"></i><br>
+      <a style="color:black; font-weight:bold;" href="login.html">PROFILE</a>
+     </div>
+     <div class="wlink">
+     <i  id="wlink"class="far fa-heart"></i><br>
+     <a style="color:black; font-weight:bold;" href="wishlist.html">WISHLIST</a>
+    </div>
+   <div class="Bicon">
+  <i  id="Bicon"class="fas fa-shopping-bag"></i><br>
+   <a style="color:black; font-weight:bold;" href="#">{{noofelement}}</a>
+ </div>
+</nav>
+
+
+<div class="box">
+  <div class="impp">
+<div class="container">
+  <input type="checkbox" id="zoomCheck">
+  <label for="zoomCheck">
+  <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14017104/2021/5/20/a93cc7c0-3261-41f6-bfc5-4e7c25467c4e1621497753312-Jack--Jones-Men-Casual-Shoes-2001621497753010-1.jpg">
+  </label>
+</div>
+
+<div class="container">
+  <input type="checkbox" id="zoomCheck0">
+  <label for="zoomCheck0">
+  <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14017104/2021/5/20/d02a8597-1558-43ce-a0eb-5509d6b476fb1621497753269-Jack--Jones-Men-Casual-Shoes-2001621497753010-4.jpg">
+  </label>
+</div>
+</div>
+
+<div class="details">
+
+<h3>  Jack & Jones</h3>
+<h4>Men Multicoloured Sneakers
+Rs. 2799</h4>
+ <h6>Price Details
+Maximum Retail PriceRs. 3999
+(Incl. of all taxes)
+Discount30% OFF</h6>
+<h6>Selling PriceRs. 2799
+(Incl. of all taxes)
+Rs. 3999(30% OFF)
+inclusive of all taxes</h6>
+
+<div class="btnmm" style="display:flex;">
+  <button name="button" style="background-color:#F8485E; border:1px solid #F8485E; color:white; width:350px; height:50px;" ng-click="opernp()"><i  id="Bicon"class="fas fa-shopping-bag"></i> ADD TO CART</button>
+  <button type="button" name="button" style="background-color:#F8485E; border:1px solid #F8485E; color:white;  width:350px; height:50px; margin-left:10px;" ng-click="login.html"><i  id="wlink"class="far fa-heart"></i> WHISHLIST</button>
+</div>
+
+
+<h5 style="margin-top:30px;">DELIVERY OPTIONS....<i class="fas fa-truck"></i></h5>
+<br>
+<input type="text"  ng-model="inp"  name="pinid" placeholder="Enter a Pin Code" style="width:450px; height:40px;">
+<p ng-repeat="p in pin |filter:serchpin ">
+<div ng-show='available' style="color: red">Available</div>
+<div ng-show='notavailable' style="color: red">Not available</div>
+
+<p>
+  Please enter PIN code to check delivery time & Pay on Delivery Availability<br>
+  100% Original Products<br>
+Pay on delivery might be available<br>
+Easy 30 days returns and exchanges<br>
+Try & Buy might be available</p>
+
+
+<h5>PRODUCT DETAILS </h5>
+
+  <h5>A pair of round-toe multicoloured sneakers, has regular styling, lace-up detail</h5>
+<li>PU & Mesh upper
+Cushioned footbed
+Textured and patterned outsole
+Warranty: 3 month
+Warranty provided by brand/manufacturer</li>
+
+<h5>Material & Care</h5>
+<ul>PU & Mesh</ul>
+ <ul>Wipe with a dry clean cloth</ul>
+
+<h5>Specifications</h5>
+<ul>Type:  Sneakers</ul>
+<ul>Toe Shape: Square Toe</ul>
+<ul>Pattern:  Printed</ul>
+<ul>Fastening: Lace-Ups</ul>
+<ul>Shoe Width: Regular</ul>
+<ul>Ankle Height: Regular</ul>
+<ul>Insole:  Comfort Insole</ul>
+<ul>Sole Material: EVA</ul>
+
+</div>
+</div>
+<center><h2 style="background-color:#EFE3D0">SIMILAR PRODUCTS</h2></center>
+<div class="prods" style="display:flex;">
+<div class="pinn" style="background-color:#EFE3D0" ng-repeat="x in productlist" ng-click="serchpin()">
+  <img  class="img"  ng-src={{x.srcc}} width="250px;"> </img>
+  <div class="brannd">{{x.Brand}}</div>
+  <div class="ppp">{{x.price}}</div>
+  <p>{{x.about}}</p>
+  <div class="bbbb" style="display:flex;">
+    <button id="wishbtn" class="btn btn-outline-info" ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+    <button id="cartbtn" type="button" name="button" class="btn btn-outline-info" ng-click="addtocart(p.id)" ><i class="fas fa-cart-plus"></i></button>
+</div>
+
+</div>
+</div>
+  </body>
+  <script>
+var app = angular.module("myapp", []);
+app.controller('mycnt',function($scope){
+  $scope.cart=[];
+  $scope.wishl=[];
+$scope.noofelement = localStorage.getItem('noofelement');
+$scope.pin = ["421605","400060" , "400070", "400080", "400010"];
+
+
+$scope.productlist=[
+{ 'Brand':'Nike', 'price': 'RS2999' , 'about':'Men ColorBlocked Sneakars', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/6/3/de8a3cc1-db55-4562-a6fd-e0c486b72f921622705075429-1.jpg','quantity':0,'id':115},
+{ 'Brand':'Arfo jack', 'price': 'RS799' , 'about':'Printed round neck T-shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/5/25/3ed7e45d-0ffc-4ab4-91d3-8a08c76979001621918180996-1.jpg','quantity':0,'id':116},
+{ 'Brand':'Cartlon landon sports', 'price': 'RS579' , 'about':'Men stripted slider', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/2/10/4da1b20c-f9ef-490b-9298-0982b41d34231612958045019-1.jpg','quantity':0,'id':117},
+{ 'Brand':'Woodland', 'price': 'RS3295' , 'about':'Men Leather Sports Sandals', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1095844/2015/12/16/11450260902319-Woodland-Men-Blue-Leather-Sports-Sandals-2881450260901989-1.jpg','quantity':0,'id':118},
+{ 'Brand':'Red Tape', 'price': 'Rs1499' , 'about':'Men Leather Monk Shoes', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/10/29/9005168e-fd16-4da1-b3f8-3b1e27e3d5a01603980399675-1.jpg','quantity':0,'id':119}
+
+];
+
+$scope.serchpin = function(){
+  $scope.available = false;
+  $scope.notavailable = false;
+if( $scope.pin.indexOf($scope.inp)!= -1)
+ {
+  $scope.available = true;
+  $scope.notavailable = false;
+}
+else{
+  $scope.notavailable = true;
+  $scope.available = false;
+}
+}
+
+$scope.addtocart = function($index)
+			{
+
+				if(JSON.parse(localStorage.getItem('cart')) == null){
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						$scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+
+					}
+				}
+				else{
+
+					$scope.cart = JSON.parse(localStorage.getItem('cart'))
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						// $scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+					}
+				}
+
+			}
+      $scope.wish = function($index){
+
+				if(JSON.parse(localStorage.getItem('wish')) == null)
+				{
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Item Wishlisted")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+
+				else
+				{
+					$scope.wishl = JSON.parse(localStorage.getItem('wish'))
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("allredy in your wishlist")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+			}
+
+
+
+});
+
+    </script>
+</html>
+</body>

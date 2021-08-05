@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- bootstrap. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!-- fontawesome. -->
+    <script src="https://kit.fontawesome.com/ab026326c7.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <title> MEN Main page</title>
+  </head>
+  <body>
+    <div  ng-app="myApp" ng-controller="myCtrl">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"><i id="icon"class="fab fa-adn"></i></a>
+      <div class="nav">
+
+        <li class="nav-item">
+          <a class="nav-link" href="first.html">MEN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="MEN.html">MEN</a>
+        </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="WOMEN.html">WOMEN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="KIDS.html">KIDS</a>
+          </li>
+
+
+          <li class="searchbar">
+          <input class="form-control mr-sm-2" type="search" placeholder=" Search for products,brands and more " aria-label="Search" ng-model="Searchh">
+         </li>
+
+          <!-- links -->
+          <div class="linkk" style="display:flex; margin-left:50px;">
+
+          <div class="picon">
+          <i  id="picon" class="far fa-user"></i><br>
+          <a  href="login.html" style="color:black; font-weight:bold;">PROFILE</a>
+         </div>
+         <div class="wlink">
+         <i  id="wlink"class="far fa-heart"></i><br>
+         <a  href="wishlist.html" style="color:black; font-weight:bold;">WISHLIST</a>
+        </div>
+       <div class="Bicon">
+      <i  id="Bicon"class="fas fa-shopping-bag"></i><br>
+       <a  style="color:black; font-weight:bold;" href="ADC.html">{{noofelement}}</a>
+     </div>
+    </div>
+    </nav>
+    <div class="smalltab">
+      <h5>Home/Men's Fastion Store</h5>
+      <h6>Men's Fastion Store- items </h6>
+    </div>
+<!-- products -->
+    <h1> T-Shirts</h1>
+    <!-- array vivepart -->
+    <div class=" row mx-0  px-5">
+    <div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="p in productlist | filter: Searchh">
+      <div class="cardbody">
+    <img  class="img"  ng-src={{p.srcc}}> </img>
+    <div class="card-title">{{p.Brand}}</div>
+    <div class="card-text">{{p.about}}</div>
+    <div class="card-text">{{p.price}}</div>
+    <div class="cardbtn">
+    <button id="wishbtn" class="btn btn-outline-info" ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+    <button id="cartbtn" type="button" name="button" class="btn btn-outline-info" ng-click="addtocart(p.id)" ><i class="fas fa-cart-plus"></i></button>
+    </div>
+    </div>
+  </div>
+</div>
+
+<h1> Shirts</h1>
+<div class=" row mx-0  px-5">
+<div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="p in productlist1 | filter: Searchh">
+  <div class="cardbody">
+<img  class="img"  ng-src={{p.srcc}}> </img>
+<div class="card-title">{{p.Brand}}</div>
+<div class="card-text">{{p.about}}</div>
+<div class="card-text">{{p.price}}</div>
+<div class="cardbtn">
+<button id="wishbtn" class="btn btn-outline-info" ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+<button id="cartbtn" type="button" name="button" class="btn btn-outline-info" ng-click="addtocart(p.id)"><i class="fas fa-cart-plus"></i></button>
+</div>
+</div>
+</div>
+</div>
+
+<h1> Traugers</h1>
+<div class=" row mx-0  px-5">
+<div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="p in productlist2 | filter: Searchh">
+  <div class="cardbody">
+<img  class="img"  ng-src={{p.srcc}}> </img>
+<div class="card-title">{{p.Brand}}</div>
+<div class="card-text">{{p.about}}</div>
+<div class="card-text">{{p.price}}</div>
+<div class="cardbtn">
+<button id="wishbtn" class="btn btn-outline-info" ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+<button id="cartbtn" type="button" name="button" class="btn btn-outline-info"ng-click="addtocart(p.id)" ><i class="fas fa-cart-plus"></i></button>
+</div>
+</div>
+</div>
+</div>
+
+<h1> Footwears</h1>
+<!-- array vivepart -->
+<div class=" row mx-0  px-5">
+<div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="p in productlist3 | filter: Searchh">
+<div class="cardbody">
+<img  class="img"  ng-src={{p.srcc}}> </img>
+<div class="card-title">{{p.Brand}}</div>
+<div class="card-text">{{p.about}}</div>
+<div class="card-text">{{p.price}}</div>
+<div class="cardbtn">
+<button id="wishbtn" class="btn btn-outline-info" ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+<button id="cartbtn" type="button" name="button" class="btn btn-outline-info" ng-click="addtocart(p.id)"><i class="fas fa-cart-plus"></i></button>
+</div>
+</div>
+</div>
+</div>
+
+ <center><h1 class="th">Availabel Top Brands At Best Price</h1></center>
+ <div class="bb">
+<div class="cc">
+
+  <div class="card" style="width: 20rem;">
+<img src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/7/24/fdbe0ffe-4895-4ca8-856e-8e006420d0841627112891313-Nike.jpg">
+<div class="card-body">
+<a href="nike.html" >Nike</a>
+</div>
+</div>
+<div class="card" style="width: 20rem;">
+<img src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/7/24/2eb9a6ca-fe5b-4e51-a651-a905cd5436eb1627112904817-Jack_-_Jones.jpg">
+<div class="card-body">
+  <a href="ff.html" >Jack-Jones</a>
+</div>
+</div>
+<div class="card" style="width: 20rem;">
+<img src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/7/23/bdc26e92-1c22-4d4c-8b5f-066c2975ced61627042253682-Roadster.jpg">
+<div class="card-body">
+  <a href="rede.html">Roadster</a>
+</div>
+</div>
+<div class="card" style="width: 20rem;">
+<img  src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/7/24/2469cf4a-c8c0-438f-a248-421c8e1d2ecf1627112921772-HRX.jpg">
+<div class="card-body">
+  <a href="HRX.html">HRX</a>
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope){
+  $scope.cart = [];
+  $scope.wishl =[];
+$scope.productlist=[{ 'Brand':'HRX', 'price': 'RS499' , 'about':'running T-shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10106341/2020/12/4/ebd42abb-c45f-4290-b8e7-073f18f3b8541607088518050-HRX-by-Hrithik-Roshan-Ultralyte-Men-Black-Solid-Running-T-sh-1.jpg','quantity':0,'id':0},
+{ 'Brand':'Roadster', 'price': 'RS209' , 'about':'Solid round neck T-shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/3314141/2018/5/19/e55c2244-8515-44d5-93da-d719f3f8d4551526706357637-Roadster-Men-Tshirts-6461526706356615-1.jpg','quantity':0,'id':1},
+{ 'Brand':'Moda-Rapido', 'price': 'RS421' , 'about':'Printed round neck T-shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2378362/2018/6/9/270e0a7e-365b-4640-9433-b269c60bf3061528527188563-Moda-Rapido-Men-Maroon-Printed-Round-Neck-T-shirt-3811528527-1.jpg','quantity':0,'id':2},
+{ 'Brand':'HERE&NOW', 'price': 'RS1399' , 'about':'The polo coller T-shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/4318091/2019/5/8/c0e24a77-4369-42ae-98c4-b583e5375dbf1557297643554-HERENOW-Men-White--Coral-Pink-Colourblocked-Polo-Collar-T-sh-1.jpg','quantity':0,'id':3},
+{ 'Brand':'Roadster', 'price': 'RS207' , 'about':'Solid round neck T-shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/9329623/2019/5/3/cc23af5a-e95f-4d0d-accc-5d32db57026f1556863519870-Roadster-Men-Navy-Blue-Printed-Round-Neck-T-shirt-6311556863-1.jpg','quantity':0,'id':4},
+{ 'Brand':'Calvin-Klein-Jeans', 'price': 'RS3999' , 'about':'Men polo callar neck T-shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14590702/2021/7/15/6488a459-739c-47d8-a892-1dc67ed73bbc1626347434826-Calvin-Klein-Jeans-Men-Tshirts-6331626347432209-1.jpg','quantity':0,'id':5}
+
+];
+
+$scope.productlist1=[{ 'Brand':'Campus Sutra', 'price': 'RS599' , 'about':'Men Standerd Fit Casual Shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10456354/2019/8/22/d56e75f6-f1a7-4fdd-b430-51befb36f88d1566454760527-Campus-Sutra-Men-Colourblocked-Casual-Spread-Shirt-290156645-1.jpg','quantity':0,'id':6},
+{ 'Brand':'Roadster', 'price': 'RS479' , 'about':'Men Casual Shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg','quantity':0,'id':7},
+{ 'Brand':'HIGHLANDER', 'price': 'RS549' , 'about':'White round neck shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2050688/2018/2/5/11517823120338-HIGHLANDER-Men-White-Slim-Fit-Solid-Casual-Shirt-5911517823120124-1.jpg','quantity':0,'id':8},
+{ 'Brand':'Roadster', 'price': 'R749' , 'about':'Men Casual Shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10275261/2021/6/26/880b13a3-0880-4a56-988f-240e740855bd1624710002421-Roadster-Men-Shirts-6471624710001786-1.jpg','quantity':0,'id':9},
+{ 'Brand':'Roadster', 'price': 'RS799' , 'about':'Men  Stripted Casual Shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1667040/2020/1/22/08a51885-d098-435d-a30f-ed24269125751579688068184-Roadster-Men-Green--Beige-Checked-Casual-Shirt-9451579688066-1.jpg','quantity':0,'id':10},
+{ 'Brand':'HIGHLANDER', 'price': 'Rs540' , 'about':'Men Casual Stripted Shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2347553/2019/3/15/2036a16b-4042-4c39-9d74-f3b765d722091552647943963-HIGHLANDER-Men-White--Pink-Slim-Fit-Striped-Casual-Shirt-623-1.jpg','quantity':0,'id':11}
+
+];
+
+$scope.productlist2=[{ 'Brand':'Roadster', 'price': 'RS1199' , 'about':'Men Regular Cargo Fits', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/5415202/2018/5/23/7a32e5c1-6ac6-4219-984e-63cb68497fa21527075068613-Roadster-Men-Trousers-6171527075067295-1.jpg','quantity':0,'id':12},
+{ 'Brand':'HRX', 'price': 'RS1499' , 'about':'Men gry fit', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12919142/2021/7/16/ef8ad982-fb6b-4478-b5ec-b0202a2fff481626427524847-HRX-by-Hrithik-Roshan-Men-Trousers-3901626427524365-1.jpg','quantity':0,'id':13},
+{ 'Brand':'HRX', 'price': 'RS1199' , 'about':'Black Solid Track', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1912686/2019/4/2/53c743cc-289c-4ec2-afc8-0960de480e061554185740000-HRX-by-Hrithik-Roshan-Blue-Joggers-4191554185737623-1.jpg','quantity':0,'id':14},
+{ 'Brand':'Rigo', 'price': 'RS567' , 'about':'Men printed pent', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/11/13/1432881d-522e-4d68-92d8-00119c63f9471605235761713-1.jpg','quantity':0,'id':15},
+{ 'Brand':'Rigo', 'price': 'RS499' , 'about':'Men Trandin Grey Track Pant', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12671142/2020/11/9/575138c4-307e-4fd1-89fa-d4377042b6cd1604923295920-Harvard-Men-Track-Pants-3431604923293143-1.jpg','quantity':0,'id':16},
+{ 'Brand':'Harvard', 'price': 'Rs495' , 'about':'Men Solid Track pant', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12671176/2020/11/30/0d036a49-3e8f-47a6-8eb8-c752ef8c50121606729508341-Harvard-Men-Track-Pants-7741606729506224-1.jpg','quantity':0,'id':17}
+
+];
+
+$scope.productlist3=[{ 'Brand':'Mr.wonker', 'price': 'RS699' , 'about':'Men ColorBlocked Sneakars', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/6/3/66718949-3ccb-46b5-b36e-6fbb7dfe9f271622708283776-1.jpg','quantity':0,'id':18},
+{ 'Brand':'Nike', 'price': 'RS2999' , 'about':'Men ColorBlocked Sneakars', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/6/3/de8a3cc1-db55-4562-a6fd-e0c486b72f921622705075429-1.jpg','quantity':0,'id':19},
+{ 'Brand':'Arfo jack', 'price': 'RS799' , 'about':'Printed round neck T-shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/5/25/3ed7e45d-0ffc-4ab4-91d3-8a08c76979001621918180996-1.jpg','quantity':0,'id':20},
+{ 'Brand':'Cartlon landon sports', 'price': 'RS579' , 'about':'Men stripted slider', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/2/10/4da1b20c-f9ef-490b-9298-0982b41d34231612958045019-1.jpg','quantity':0,'id':21},
+{ 'Brand':'Woodland', 'price': 'RS3295' , 'about':'Men Leather Sports Sandals', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1095844/2015/12/16/11450260902319-Woodland-Men-Blue-Leather-Sports-Sandals-2881450260901989-1.jpg','quantity':0,'id':22},
+{ 'Brand':'Red Tape', 'price': 'Rs1499' , 'about':'Men Leather Monk Shoes', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/10/29/9005168e-fd16-4da1-b3f8-3b1e27e3d5a01603980399675-1.jpg','quantity':0,'id':23},
+
+
+];
+
+
+// add  to cart  funtion
+$scope.addtocart = function($index)
+			{
+
+				if(JSON.parse(localStorage.getItem('cart')) == null){
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						$scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+
+					}
+				}
+				else{
+
+					$scope.cart = JSON.parse(localStorage.getItem('cart'))
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						// $scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+					}
+				}
+
+			}
+      $scope.wish = function($index){
+
+				if(JSON.parse(localStorage.getItem('wish')) == null)
+				{
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Item Wishlisted")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+
+				else
+				{
+					$scope.wishl = JSON.parse(localStorage.getItem('wish'))
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Item Wishlisted")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+			}
+      // $scope.rem = function($index)
+			// {
+      //
+			// 	$scope.addto = false;
+			// 	console.log($scope.cart.indexOf($index))
+			// 	$scope.i = $scope.cart.indexOf($index)
+			// 	console.log($scope.i)
+			// 	if($scope.i != -1)
+			// 	{
+			// 		$scope.cart.splice($scope.i,1)
+			// 		$scope.productss[$index].quantity = 0
+			// 	}
+			// 	$scope.noofelement = $scope.cart.length
+			// 	localStorage.setItem('cart', JSON.stringify($scope.cart))
+			// 	localStorage.setItem('noofelement', $scope.noofelement)
+			// }
+
+});
+</script>
+
+  </body>
+</html>

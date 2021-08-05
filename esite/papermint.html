@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- bootstrap. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!-- fontawesome. -->
+    <script src="https://kit.fontawesome.com/ab026326c7.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <title>papermint</title>
+  </head>
+  <body>
+<div  ng-app="myApp" ng-controller="myCtrl">
+<!--Navbar-->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><i id="icon"class="fab fa-adn"></i></a>
+  <div class="nav">
+
+    <li class="nav-item">
+      <a class="nav-link" href="MEN.html">MEN</a>
+    </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="WOMEN.html">WOMEN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="KIDS.html">KIDS</a>
+      </li>
+
+
+      <li class="searchbar">
+      <input class="form-control mr-sm-2" type="search" placeholder=" Search for products,brands and more " aria-label="Search" ng-model="searchh">
+     </li>
+
+      <!-- links -->
+      <div class="linkk" style="display:flex; margin-left:80px;">
+
+      <div class="picon">
+      <i  id="picon" class="far fa-user"></i><br>
+      <a style="color:black; font-weight:bold;" href="login.html">Profile</a>
+     </div>
+     <div class="wlink">
+     <i  id="wlink"class="far fa-heart"></i><br>
+     <a style="color:black; font-weight:bold;" href="wishlist.html">Wishlist</a>
+    </div>
+   <div class="Bicon">
+  <i  id="Bicon"class="fas fa-shopping-bag"></i><br>
+   <a style="color:black; font-weight:bold;" href="ADC.html">{{noofelement}}</a>
+ </div>
+</nav>
+
+
+<div class="smalltab">
+  <h5>Home/KID's Fastion Store</h5>
+  <h6>KID's Fastion Store- items </h6>
+</div>
+
+<!-- array vivepart -->
+<div class=" row mx-0  px-5">
+<div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="p in productlist|filter:searchh">
+  <div class="cardbody">
+<img  class="img"  ng-src={{p.srcc}}> </img>
+<div class="card-title">{{p.Brand}}</div>
+<div class="card-text">{{p.about}}</div>
+<div class="card-text">{{p.price}}</div>
+<div class="cardbtn">
+<button id="wishbtn" class="btn btn-outline-info" ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+<button id="cartbtn" type="button" name="button" class="btn btn-outline-info" ng-click= "addtocart(p.id)" ><i class="fas fa-cart-plus"></i></button>
+</div>
+
+</div>
+</div>
+
+
+</div>
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope){
+    $scope.cart=[];
+    $scope.wishl=[];
+  $scope.productlist=[{ 'Brand':'papermint', 'price': 'RS1799' , 'about':'girl solid plazo', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/8027019/2018/12/8/d256c965-2c8c-4172-8eb1-8b96e393be761544267937568-Peppermint-Girls-Palazzos-1681544267936935-1.jpg','quantity':0,'id':42},
+  { 'Brand':'papermint', 'price': 'RS1098' , 'about':'Foral Frock', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/7/25/1fa682f2-5c93-4cf2-b50a-334a0d0d33491595628242409-1.jpg','quantity':0,'id':43},
+  { 'Brand':'papermint', 'price': 'RS399' , 'about':'girl set of two bib', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11609978/2020/3/21/f066152d-c97e-442f-ab0c-9d84b8ebde0f1584784992616PeppermintGirlsBlueYellowSolidT-shirtwithShorts1.jpg','quantity':0,'id':44},
+  { 'Brand':'papermint', 'price': 'RS824' , 'about':'Boy blue And white Dunggrey', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10282315/2019/11/29/04e8ede7-3e19-4b16-9e8b-1520efca31e11575024386026-Peppermint-Girls-Clothing-Set-7451575024382108-1.jpg','quantity':0,'id':45},
+  { 'Brand':'papermint', 'price': 'RS424' , 'about':'boy stripted sleep shuit', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11385620/2020/4/20/dd806dff-829c-4a15-a5eb-9d7bcb4c77191587371448697-Peppermint-Girls-Green-Solid-Balloon-Dress-2171587371447923-1.jpg','quantity':0,'id':46},
+  {'Brand':'papermint', 'price': 'RS424' , 'about':'pink shirt', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2020/7/25/079802e8-4238-4448-9900-9ae12eba730a1595629880506-1.jpg','quantity':0,'id':47}
+];
+
+$scope.addtocart = function($index)
+			{
+
+				if(JSON.parse(localStorage.getItem('cart')) == null){
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						$scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+
+					}
+				}
+				else{
+
+					$scope.cart = JSON.parse(localStorage.getItem('cart'))
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						// $scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+					}
+				}
+
+			}
+      $scope.wish = function($index){
+
+				if(JSON.parse(localStorage.getItem('wish')) == null)
+				{
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Item Wishlisted")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+
+				else
+				{
+					$scope.wishl = JSON.parse(localStorage.getItem('wish'))
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("allredy in your wishlist")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+			}
+});
+
+</script>
+</body>
+</html>

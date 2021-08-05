@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- bootstrap. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!-- fontawesome. -->
+    <script src="https://kit.fontawesome.com/ab026326c7.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <title> WOMEN Main page</title>
+  </head>
+  <body>
+    <div  ng-app="myApp" ng-controller="myCtrl">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"><i id="icon"class="fab fa-adn"></i></a>
+      <div class="nav">
+
+        <li class="nav-item">
+          <a class="nav-link" href="first.html">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="MEN.html">MEN</a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="WOMEN.html">WOMEN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="KIDS.html">KIDS</a>
+          </li>
+
+
+          <li class="searchbar">
+          <input class="form-control mr-sm-2" type="search" placeholder=" Search for products,brands and more " aria-label="Search" ng-model="searchh">
+         </li>
+
+          <!-- links -->
+          <div class="linkK" style="display:flex; margin-left:60px;">
+
+          <div class="picon">
+          <i  id="picon" class="far fa-user"></i><br>
+          <a style="color:black; font-weight:bold;" href="login.html">PROFILE</a>
+         </div>
+         <div class="wlink">
+         <i  id="wlink"class="far fa-heart"></i><br>
+         <a   style="color:black; font-weight:bold;"href="wishlist.html">WISHLIST</a>
+        </div>
+       <div class="Bicon">
+      <i  id="Bicon"class="fas fa-shopping-bag"></i><br>
+       <a  style="color:black; font-weight:bold;" href="ADC.html">{{noofelement}}</a>
+     </div>
+    </div>
+    </nav>
+    <div class="smalltab">
+      <h5>Home/Womens Fastion Store</h5>
+      <h6>women Fastion Store- items </h6>
+    </div>
+    <!-- slides -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/7/28/d1d64ef5-ca22-43c3-8a9b-6a33870c98481627483525621-Tops---Tees_Desk_Banner.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/7/28/57235c1b-b053-4fff-b5cf-db6fde6e2c111627483525635-Kurtas---Sets_Desk.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/7/28/3e476804-34fa-464a-89df-82c2aec48ccc1627479884359-Desktop-banner.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+<!-- products -->
+
+<h1>Kurtas</h1>
+<div class=" row mx-0  px-5">
+<div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="p in productlist1 |filter: searchh">
+  <div class="cardbody">
+<img  class="img"  ng-src={{p.srcc}}> </img>
+<div class="card-title">{{p.Brand}}</div>
+<div class="card-text">{{p.about}}</div>
+<div class="card-text">{{p.price}}</div>
+<div class="cardbtn">
+<button id="wishbtn" class="btn btn-outline-info" ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+<button id="cartbtn"   type="button" name="button" class="btn btn-outline-info" ng-click="addtocart(p.id)"><i class="fas fa-cart-plus"></i></button>
+</div>
+</div>
+</div>
+
+<!-- array vivepart -->
+<h1>Dress</h1>
+<div class=" row mx-0  px-5">
+<div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="p in productlist2 |filter: searchh">
+  <div class="cardbody">
+<img  class="img"  ng-src={{p.srcc}}> </img>
+<div class="card-title">{{p.Brand}}</div>
+<div class="card-text">{{p.about}}</div>
+<div class="card-text">{{p.price}}</div>
+<div class="cardbtn">
+<button id="wishbtn" class="btn btn-outline-info" ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+<button id="cartbtn" type="button" name="button" class="btn btn-outline-info" ng-click="addtocart(p.id)"><i class="fas fa-cart-plus"></i></button>
+</div>
+</div>
+</div>
+</div>
+<h1>Bags</h1>
+<div class=" row mx-0  px-5">
+<div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="p in productlist|filter: searchh">
+<div class="cardbody">
+<img  class="img"  ng-src={{p.srcc}}> </img>
+<div class="card-title">{{p.Brand}}</div>
+<div class="card-text">{{p.about}}</div>
+<div class="card-text">{{p.price}}</div>
+<div class="cardbtn">
+<button id="wishbtn" class="btn btn-outline-info"ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+<button id="cartbtn" type="button" name="button" class="btn btn-outline-info" ng-click="addtocart(p.id)"><i class="fas fa-cart-plus"></i></button>
+</div>
+</div>
+</div>
+</div>
+<h1>Footwears</h1>
+<!-- array vivepart -->
+<div class=" row mx-0  px-5">
+<div class="col-lg-4 col-md-2 mb-lg-0 mb-5"  ng-repeat="p in productlist3|filter: searchh">
+  <div class="cardbody">
+<img  class="img"  ng-src={{p.srcc}}> </img>
+<div class="card-title">{{p.Brand}}</div>
+<div class="card-text">{{p.about}}</div>
+<div class="card-text">{{p.price}}</div>
+<div class="cardbtn">
+<button id="wishbtn" class="btn btn-outline-info" ng-click="wish(p.id)"><i class="fas fa-heart"></i></button>
+<button id="cartbtn" type="button" name="button" class="btn btn-outline-info" ng-click="addtocart(p.id)" ><i class="fas fa-cart-plus"></i></button>
+</div>
+</div>
+</div>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope){
+  $scope.cart=[];
+  $scope.wishl=[];
+$scope.productlist=[{ 'Brand':'WOMEN MARKS', 'price': 'RS959' , 'about':'Checked Satchel', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/15/9bcaa728-d706-470b-a0a0-db4f1231756e1615820174620-1.jpg','quantity':0,'id':78},
+{ 'Brand':'H&M', 'price': 'RS1299' , 'about':'Qualited mini bag', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/5/28/46ba4f80-d471-4bd9-aa1c-1f184c0011181622177499421-1.jpg','quantity':0,'id':79},
+{ 'Brand':'Wildcraft', 'price': 'RS1599' , 'about':'Unisex laptop Bag', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1764251/2017/3/23/11490269086797-Wildcraft-Unisex-Grey--Blue-Buckler-Patterned-Laptop-Backpack-3791490269086460-1.jpg','quantity':0,'id':80},
+{ 'Brand':'H&M', 'price': 'RS2299' , 'about':'Women Black Solid', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/8/3/81d8af0d-f549-4383-abb6-8807097936241564773990589-1.jpg','quantity':0,'id':81},
+{ 'Brand':'Safari', 'price': 'RS3115' , 'about':'Soft blue length bag', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/6/22/10793819-2c46-4c97-8bcd-3b4c9650d34c1624354573011-5.jpg','quantity':0,'id':82},
+{ 'Brand':'Apsis', 'price': 'Rs1049' , 'about':'Handbags', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/6/28/f95a6943-cd60-4b96-9e3f-ca8e7b61c4b41624860192309-1.jpg','quantity':0,'id':83}
+
+];
+$scope.productlist1=[{ 'Brand':'BiBa', 'price': 'RS959' , 'about':'women solid kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/9371115/2019/5/14/7e1dcf08-9816-4812-bd83-560851a73e531557836005052-Sangria-Women-Kurtas-8081557836002536-1.jpg','quantity':0,'id':84},
+{ 'Brand':'Varanga', 'price': 'RS1209' , 'about':'Pink--White-Leheriya-Printed-Angrakha-Kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13647622/2021/3/4/1fa584db-2f9e-4a0f-8ee3-f649a92eb3de1614860439664-Varanga-Women-Pink--White-Leheriya-Printed-Angrakha-Kurta-Wi-1.jpg','quantity':0,'id':85},
+{ 'Brand':'Kvsfab', 'price': 'RS1290' , 'about':'Embedary solid green kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13619504/2021/2/24/2b2c164a-4b1e-45d9-83a3-ca3dfbd11da91614166542937-Kvsfab-Teal-Green-color-Embroidery-with-Sequins-Work-Party-W-1.jpg','quantity':0,'id':86},
+{ 'Brand':'Anouk', 'price': 'RS790' , 'about':'Floral-Printed-Kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13238056/2021/3/3/96a567c0-c3a4-4e2b-96c6-20e2554692f81614767629741-Anouk-Beige-Floral-Printed-Kurta-4031614767627829-1.jpg','quantity':0,'id':87},
+{ 'Brand':'YASH-Gallary', 'price': 'RS1079' , 'about':'red and offwhite anarkali kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11007986/2019/12/6/38a9ba9e-92ab-4e19-81d1-6e9884a996071575634892337-Womens-Cotton-Bandhej-Print-Anarkali-Kurta-Red-9401575634889-1.jpg','quantity':0,'id':88},
+{ 'Brand':'Libas', 'price': 'Rs890' , 'about':'Black simple kurta', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12395988/2020/9/2/786bafb0-e4b1-49da-86e8-3b104c0ca7a61599054033451Libas1.jpg','quantity':0,'id':89}
+
+];
+$scope.productlist2=[{ 'Brand':'STREET9', 'price': 'RS595' , 'about':'Solid and Flear Dress', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/23/6f950d1b-e38c-464c-9de9-9a4d7f77d6ee1616459696100-1.jpg','quantity':0,'id':90},
+{ 'Brand':'SASSAFRAS', 'price': 'RS773' , 'about':'Cute Yellow Party Dress', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/11364222/2020/1/28/6abeb9ca-d3ae-4009-baf3-7db1922ad3631580197479361-SASSAFRAS-Women-Yellow-Solid-A-Line-Dress-4861580197477374-1.jpg','quantity':0,'id':91},
+{ 'Brand':'KUSHAALI', 'price': 'RS599' , 'about':'Solid green flyer dress', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13840088/2021/3/23/453a7a90-d6f4-413a-871f-400baf7f61791616498719211-KASSUALLY-Women-Dresses-8061616498718676-1.jpg','quantity':0,'id':92},
+{ 'Brand':'Athena', 'price': 'RS1139' , 'about':'Pink  solid dress', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13719154/2021/3/5/3fda7627-9073-4702-a66e-f32f10bc64021614925061807-Athena-Fuchsia-Pink-dress-with-Balloon-puff-sleeves-81614925-1.jpg','quantity':0,'id':93},
+{ 'Brand':'MANGO', 'price': 'RS1921' , 'about':'Knitted Dress', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13344970/2021/1/15/14908eae-260c-47c8-a098-1aa7a90da6031610692874567ShirtsMANGOWomenTopsMANGOWomenTopsMANGOWomenTrousersMANGOWom1.jpg','quantity':0,'id':94},
+{ 'Brand':'20Dresses', 'price': 'Rs1000' , 'about':'Red party dress', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2432653/2018/2/9/11518160005864-20Dresses-Women-Red-Solid-Fit-and-Flare-Dress-1391518160005678-1.jpg','quantity':0,'id':95}
+
+];
+$scope.productlist3=[{ 'Brand':'Shezon', 'price': 'RS999' , 'about':'Women Printed pums', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13441602/2021/2/17/7ff9d09c-1d4d-4974-866a-f24faa80310f1613542438943-Shezone-Women-Peach-Coloured-Printed-Pumps-5921613542436815-1.jpg','quantity':0,'id':96},
+{ 'Brand':'March-Lori', 'price': 'RS797' , 'about':'Marc-Loire-Women-Heels', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1570045/2016/9/30/11475216294859-Marc-Loire-Women-Heels-7781475216294718-1.jpg','quantity':0,'id':97},
+{ 'Brand':'Vishudh', 'price': 'RS599' , 'about':'comftable and beautyfull daliy userd flats', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13203810/2021/2/17/2b640fdf-5d62-4096-85c4-7acf544aeb441613525181666VishudhWomenWhiteStripedGladiators1.jpg','quantity':0,'id':98},
+{ 'Brand':'EL-PASO', 'price': 'RS949' , 'about':'black boot', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/5/18/b0c22a97-f9d3-4b0b-9c83-83c4aa290e041621332057880-1.jpg','quantity':0,'id':99},
+{ 'Brand':'London Steps', 'price': 'RS699' , 'about':'women were', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/1/2/b7f0370b-f46e-4552-9788-fdf7cd6a7ac11609582328630-1.jpg','quantity':0,'id':100},
+{ 'Brand':'Vishudh', 'price': 'Rs799' , 'about':'baby blue ', 'srcc':'https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14032064/2021/7/30/f9a2b1c9-99a6-4edf-9d48-7c27f801a8521627586321789-Vishudh-Women-Blue-Solid-Block-Heel-Sandals-8451627586321672-6.jpg','quantity':0,'id':101}
+
+];
+
+
+// add  to cart  funtion
+$scope.addtocart = function($index)
+			{
+
+				if(JSON.parse(localStorage.getItem('cart')) == null){
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						$scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+
+					}
+				}
+				else{
+
+					$scope.cart = JSON.parse(localStorage.getItem('cart'))
+					$scope.i = $scope.cart.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Element already present")
+					}
+					else
+					{
+						$scope.remov = false
+						$scope.cart.push($index)
+						// $scope.productlist[$index].quantity = 1
+						$scope.noofelement = $scope.cart.length
+						localStorage.setItem('cart', JSON.stringify($scope.cart))
+						localStorage.setItem('noofelement', $scope.noofelement)
+					}
+				}
+
+			}
+      $scope.wish = function($index){
+
+				if(JSON.parse(localStorage.getItem('wish')) == null)
+				{
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Item Wishlisted")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+
+				else
+				{
+					$scope.wishl = JSON.parse(localStorage.getItem('wish'))
+					$scope.i = $scope.wishl.indexOf($index)
+					if($scope.i != -1)
+					{
+						alert("Item Wishlisted")
+					}
+					else
+					{
+						$scope.wishl.push($index)
+						localStorage.setItem('wish', JSON.stringify($scope.wishl))
+					}
+				}
+		}
+
+});
+
+</script>
+</body>
+</html>

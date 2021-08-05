@@ -1,0 +1,254 @@
+.searchbar{
+  margin-left: 100px;
+  width: 400px;
+  margin-top: 15px;
+}
+.nav-link{
+  color: black;
+  font-weight: bold;
+  margin: 10px;
+
+}
+.nav{ width:auto;
+}
+/* link */
+.link{
+  display: flex;
+  margin-left: 10px;
+
+
+}
+
+.babybrands{
+  display: flex;
+}
+
+#icon{
+
+  font-size: 3rem;
+  background-color: #FB9300;
+  color: #F21170;
+  border: 3px solid #F7FD04;
+  border-radius: 50%;
+}
+
+
+#picon{
+  text-align: center;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+/* class for profile link */
+.picon{
+  margin-left: 25px;
+  color: black;
+
+}
+
+.wlink{
+text-align: center;
+margin-left: 30px;
+margin-top: 5px;
+}
+.wlink{
+  margin-left: 50px;
+  color: black;
+
+}
+.Bicon{
+  margin-left: 75px;
+  color: black;
+}
+#Bicon{
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 10px;
+
+}
+/* timer */
+#p1{
+  text-align: center;
+  width: 1920;
+  height: 50px;
+  background-color: #E8F6EF;
+  font-size: 1.5rem;
+  color: red;
+}
+.img1{
+  width: 1500px;
+}
+.img2{
+  width: 385px;
+}
+.img3{
+  width: 385px;
+}
+.img4{
+  width: 385px;
+}
+.imgclass{
+  display: flex;
+  width: 1500px;
+  margin-right: 10px;
+}
+.smallcard{
+  width: 1500px;
+  margin-left: 10px;
+}
+.th{
+  margin-top: 30px;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+#thh{
+  color: red;
+}
+#t1{
+  font-size: 1.5rem;
+  color: red;
+
+}
+.circalimg{
+  display: flex;
+}
+.sly{
+  display: flex;
+}
+.cc{
+    display: flex;
+}
+/* product cards  */
+.card-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card-text{
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+.cardbody{
+  background-color: #EEEEEE;
+  border: 2rem solid #DAD0C2;
+
+}
+.cardbtn{
+  display: flex;
+}
+#cartbtn{
+  margin-left: 289px;
+}
+#wishbtn{
+  margin-left: 2px;
+
+}
+/* userpic*/
+.userpic{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.link{
+  margin-left: 700px;
+}
+
+
+/* men page */
+.smalltab{
+  background-color: #EEEEEE;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.img{
+  display: flex;
+}
+
+.limg:{
+  width: 370px;
+}
+.footer{
+  width: cover;
+  text-align: center;
+  margin-top: 100px;
+  padding: 10px;
+  background-color: #B8DFD8;
+  font-family: 'Montserrat', sans-serif;
+
+}
+/* zoomin  */
+
+input[type=checkbox] {
+  display: none;
+}
+
+.container img {
+  margin: 100px;
+  transition: transform 0.25s ease;
+  cursor: zoom-in;
+}
+
+input[type=checkbox]:checked ~ label > img {
+  transform: scale(2);
+  cursor: zoom-out;
+}
+/* first page about us */
+
+
+
+label, input, textarea{
+    /* @include bm($bm-pd: 8px) */
+    margin-left: 50px;
+}
+
+label, [placeholder]{
+    /* @include tf(#555) */
+    margin-left: 50px;
+    width: 350px;
+}
+
+
+
+textarea{
+    resize: none;
+        &::-webkit-scrollbar{
+            @include bm(0)
+        }
+}
+
+
+
+.social-media{
+    @include bm($bm-dp: $fl);
+    @include fb($rw, $fb-jc: $sa);
+        :not(&){
+            @include tf($tf-fs: 14px)
+        }
+        span{
+            @include tf($tf-fs: 16px)
+        }
+        span .fas{
+            @include bm($bm-mg: 0 0 0 10px)
+        }
+        a{
+            @include tf(#000, $tf-fs: 20px)
+        }
+}
+
+@media (max-width: 425px){
+    form{
+        @include bm(100%)
+    }
+}
+.bop{
+  display: flex;
+}
+.container3{
+  margin-left: 90px;
+  background-color: #EEEEEE;
+  width: 550px;
+}
